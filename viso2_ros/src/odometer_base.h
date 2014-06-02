@@ -47,11 +47,9 @@ private:
 
 public:
 
-  OdometerBase()
+  OdometerBase(ros::NodeHandle nh = ros::NodeHandle(), ros::NodeHandle local_nh = ros::NodeHandle("~"))
   {
     // Read local parameters
-    ros::NodeHandle local_nh("~");
-
     local_nh.param("odom_frame_id", odom_frame_id_, std::string("/odom"));
     local_nh.param("base_link_frame_id", base_link_frame_id_, std::string("/base_link"));
     local_nh.param("sensor_frame_id", sensor_frame_id_, std::string("/camera"));

@@ -37,6 +37,11 @@ add_executable(stereo_odometer
 add_dependencies(stereo_odometer ${catkin_EXPORTED_TARGETS})
 add_dependencies(stereo_odometer ${PROJECT_NAME}_gencpp)
 
+add_library(stereo_odometer_nodelet
+  src/stereo_odometer_nodelet.cpp)
+add_dependencies(stereo_odometer_nodelet ${catkin_EXPORTED_TARGETS})
+add_dependencies(stereo_odometer_nodelet ${PROJECT_NAME}_gencpp)
+
 add_executable(mono_odometer
   src/mono_odometer.cpp)
 add_dependencies(mono_odometer ${catkin_EXPORTED_TARGETS})

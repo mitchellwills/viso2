@@ -1,0 +1,6 @@
+<library path="lib/libstereo_odometer_nodelet">
+  <class name="viso2_ros::StereoOdometerNodelet" type="viso2_ros::StereoOdometerNodelet" base_class_type="nodelet::Nodelet">
+    <description>
+    </description>
+  </class>
+</library>

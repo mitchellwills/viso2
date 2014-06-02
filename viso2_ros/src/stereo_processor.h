@@ -93,14 +93,11 @@ protected:
    * callbacks.
    * \param transport The image transport to use
    */
-  StereoProcessor(const std::string& transport) :
+  StereoProcessor(const std::string& transport, ros::NodeHandle nh = ros::NodeHandle(), ros::NodeHandle local_nh = ros::NodeHandle("~")) :
     left_received_(0), right_received_(0), left_info_received_(0), right_info_received_(0), all_received_(0)
   {
-    // Read local parameters
-    ros::NodeHandle local_nh("~");
 
     // Resolve topic names
-    ros::NodeHandle nh;
     std::string stereo_ns = nh.resolveName("stereo");
     std::string left_topic = ros::names::clean(stereo_ns + "/left/" + nh.resolveName("image"));
     std::string right_topic = ros::names::clean(stereo_ns + "/right/" + nh.resolveName("image"));
